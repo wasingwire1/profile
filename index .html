@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asingwire Wilber — Software Developer & Graphic Designer | Uganda</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Asingwire Wilber is a freelance Software Developer and Graphic Designer based in Uganda. Specializing in web development, UI/UX design, and Python automation. Available for remote and local projects." />
+  <meta name="keywords" content="software developer Uganda, freelance developer Kampala, graphic designer Uganda, web developer Uganda, React developer, Python developer, UI UX designer Uganda" />
+  <meta name="author" content="Asingwire Wilber" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://asingwirewilber.dev/" />
+  <meta property="og:title" content="Asingwire Wilber — Software Developer & Graphic Designer" />
+  <meta property="og:description" content="Freelance Software Developer & Graphic Designer based in Uganda. Building digital experiences that simplify lives." />
+  <meta property="og:image" content="profile.jpeg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Asingwire Wilber — Software Developer & Graphic Designer" />
+  <meta name="twitter:description" content="Freelance Software Developer & Graphic Designer based in Uganda." />
+  <meta name="twitter:image" content="profile.jpeg" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://asingwirewilber.dev/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0a0f1e;
+      --navy-mid: #111827;
+      --navy-light: #1a2540;
+      --blue: #2563eb;
+      --blue-light: #3b82f6;
+      --blue-glow: #60a5fa;
+      --accent: #06b6d4;
+      --accent-light: #67e8f9;
+      --green: #10b981;
+      --green-light: #34d399;
+      --white: #f8fafc;
+      --white-dim: #cbd5e1;
+      --white-muted: #64748b;
+      --border: rgba(255,255,255,0.08);
+      --border-hover: rgba(255,255,255,0.16);
+      --card-bg: rgba(255,255,255,0.04);
+      --card-hover: rgba(255,255,255,0.07);
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --radius: 12px;
+      --radius-lg: 20px;
+    }
+
+    /* Light mode */
+    body.light {
+      --navy: #f0f4ff;
+      --navy-mid: #e8edf8;
+      --navy-light: #dde4f5;
+      --white: #0f172a;
+      --white-dim: #334155;
+      --white-muted: #64748b;
+      --border: rgba(0,0,0,0.08);
+      --border-hover: rgba(0,0,0,0.16);
+      --card-bg: rgba(0,0,0,0.03);
+      --card-hover: rgba(0,0,0,0.06);
+    }
+    body.light::before {
+      background:
+        radial-gradient(ellipse 80% 60% at 10% 0%, rgba(37,99,235,0.10) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 90% 100%, rgba(6,182,212,0.07) 0%, transparent 55%);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--navy);
+      color: var(--white);
+      min-height: 100vh;
+      overflow-x: hidden;
+      transition: background 0.3s, color 0.3s;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 10% 0%, rgba(37,99,235,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 90% 100%, rgba(6,182,212,0.12) 0%, transparent 55%);
+      pointer-events: none; z-index: 0;
+    }
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none; z-index: 0;
+    }
+    body.light::after {
+      background-image: radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px);
+    }
+
+    .wrapper { position: relative; z-index: 1; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.1rem 0;
+      transition: background 0.3s, backdrop-filter 0.3s, border-bottom 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(10,15,30,0.85);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    body.light nav.scrolled { background: rgba(240,244,255,0.88); }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+    }
+    .nav-logo { font-family: var(--font-display); font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--white); text-decoration: none; }
+    .nav-logo span { color: var(--blue-glow); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 400; color: var(--white-dim); text-decoration: none; letter-spacing: 0.3px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { background: var(--blue); color: #fff !important; padding: 8px 20px; border-radius: 8px; font-weight: 500 !important; transition: background 0.2s !important; }
+    .nav-cta:hover { background: var(--blue-light) !important; }
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+    .theme-toggle { background: none; border: 1px solid var(--border-hover); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, border-color 0.2s; color: var(--white-dim); font-size: 16px; }
+    .theme-toggle:hover { background: var(--card-hover); color: var(--white); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--white-dim); border-radius: 2px; transition: all 0.3s; }
+
+    /* ── MOBILE MENU ── */
+    .mobile-menu {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10,15,30,0.97); z-index: 99;
+      flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--white-dim); text-decoration: none; transition: color 0.2s; }
+    .mobile-menu a:hover { color: var(--blue-glow); }
+    .mobile-close { position: absolute; top: 1.5rem; right: 2rem; background: none; border: none; color: var(--white-dim); font-size: 28px; cursor: pointer; }
+
+    /* ── HERO ── */
+    #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; }
+    .hero-inner { display: flex; align-items: center; gap: 5rem; width: 100%; }
+    .hero-text { flex: 1; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3);
+      color: var(--green-light); font-size: 13px; font-weight: 500;
+      padding: 6px 14px; border-radius: 100px; margin-bottom: 1.5rem;
+      letter-spacing: 0.3px; animation: fadeUp 0.6s ease both;
+    }
+    .hero-badge::before { content: ''; width: 7px; height: 7px; background: var(--green); border-radius: 50%; animation: pulse 2s ease infinite; }
+    .hero-name { font-family: var(--font-display); font-size: clamp(42px, 7vw, 76px); font-weight: 800; line-height: 1.0; letter-spacing: -2px; margin-bottom: 1rem; animation: fadeUp 0.6s 0.1s ease both; }
+    .hero-name .highlight { background: linear-gradient(135deg, var(--blue-light), var(--accent-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-title { font-size: 18px; font-weight: 300; color: var(--white-dim); margin-bottom: 0.5rem; letter-spacing: 0.3px; animation: fadeUp 0.6s 0.2s ease both; }
+    .hero-title strong { color: var(--white); font-weight: 500; }
+    .hero-location { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--white-muted); margin-bottom: 0.6rem; animation: fadeUp 0.6s 0.25s ease both; }
+    .hero-availability { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--white-muted); margin-bottom: 1rem; animation: fadeUp 0.6s 0.27s ease both; }
+    .hero-availability span { color: var(--green-light); font-weight: 500; }
+    .hero-tagline { font-size: 15px; color: var(--white-muted); font-style: italic; border-left: 3px solid var(--blue); padding-left: 14px; margin-bottom: 2.5rem; line-height: 1.6; animation: fadeUp 0.6s 0.3s ease both; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeUp 0.6s 0.4s ease both; }
+
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: var(--radius); font-family: var(--font-body); font-size: 14px; font-weight: 500; text-decoration: none; cursor: pointer; border: none; transition: all 0.25s; letter-spacing: 0.3px; }
+    .btn-primary { background: var(--blue); color: #fff; box-shadow: 0 0 24px rgba(37,99,235,0.35); }
+    .btn-primary:hover { background: var(--blue-light); transform: translateY(-2px); box-shadow: 0 0 32px rgba(59,130,246,0.45); }
+    .btn-ghost { background: transparent; color: var(--white-dim); border: 1px solid var(--border-hover); }
+    .btn-ghost:hover { background: var(--card-hover); color: var(--white); border-color: rgba(255,255,255,0.25); transform: translateY(-2px); }
+    .btn-cv { background: transparent; color: var(--green-light); border: 1px solid rgba(16,185,129,0.4); }
+    .btn-cv:hover { background: rgba(16,185,129,0.08); border-color: rgba(16,185,129,0.7); transform: translateY(-2px); }
+    .btn-whatsapp { background: transparent; color: #25d366; border: 1px solid rgba(37,211,102,0.4); width: 100%; justify-content: center; font-size: 15px; margin-top: 10px; }
+    .btn-whatsapp:hover { background: rgba(37,211,102,0.08); border-color: rgba(37,211,102,0.7); transform: translateY(-2px); }
+
+    .hero-avatar-wrap { flex-shrink: 0; animation: fadeUp 0.6s 0.2s ease both; }
+    .hero-avatar { width: 280px; height: 280px; border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%; background: linear-gradient(135deg, #1e3a8a, #0e7490); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 72px; font-weight: 800; color: rgba(255,255,255,0.9); border: 2px solid rgba(96,165,250,0.3); position: relative; animation: morph 8s ease-in-out infinite; }
+    .hero-avatar::after { content: ''; position: absolute; inset: -12px; border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%; border: 1px solid rgba(96,165,250,0.15); animation: morph 8s ease-in-out infinite reverse; }
+    .hero-avatar-img { width: 280px; height: 280px; object-fit: cover; border-radius: 50%; border: 2px solid rgba(96,165,250,0.3); box-shadow: 0 0 30px rgba(37,99,235,0.3); }
+
+    @keyframes morph { 0%,100%{border-radius:40% 60% 60% 40% / 40% 40% 60% 60%;}25%{border-radius:60% 40% 40% 60% / 60% 60% 40% 40%;}50%{border-radius:50% 50% 60% 40% / 50% 40% 60% 50%;}75%{border-radius:40% 60% 50% 50% / 40% 60% 50% 50%;} }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.8);} }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);} }
+
+    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border-radius: var(--radius); overflow: hidden; margin-top: 3rem; animation: fadeUp 0.6s 0.5s ease both; }
+    .stat { background: var(--card-bg); padding: 1.25rem 1.5rem; text-align: center; }
+    .stat-num { font-family: var(--font-display); font-size: 28px; font-weight: 800; color: var(--blue-glow); }
+    .stat-label { font-size: 12px; color: var(--white-muted); margin-top: 2px; letter-spacing: 0.5px; }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 6rem 0; }
+    .section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .section-label::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+    .section-title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 42px); font-weight: 800; letter-spacing: -1px; line-height: 1.1; margin-bottom: 1rem; }
+    .section-sub { font-size: 16px; color: var(--white-muted); max-width: 520px; line-height: 1.7; margin-bottom: 3rem; }
+
+    /* ── ABOUT ── */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .about-text p { font-size: 16px; color: var(--white-dim); line-height: 1.8; margin-bottom: 1.25rem; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--white); font-weight: 500; }
+    .about-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .about-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; transition: border-color 0.25s, background 0.25s; }
+    .about-card:hover { background: var(--card-hover); border-color: var(--border-hover); }
+    .about-card-icon { font-size: 24px; margin-bottom: 10px; }
+    .about-card-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .about-card-text { font-size: 13px; color: var(--white-muted); line-height: 1.5; }
+
+    /* ── SERVICES ── */
+    #services { background: rgba(255,255,255,0.015); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .service-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; transition: all 0.3s; position: relative; overflow: hidden; }
+    .service-card::after { content: ''; position: absolute; inset: 0; border-radius: var(--radius-lg); background: linear-gradient(135deg, rgba(37,99,235,0.05), transparent); opacity: 0; transition: opacity 0.3s; }
+    .service-card:hover { border-color: rgba(37,99,235,0.4); transform: translateY(-5px); background: var(--card-hover); }
+    .service-card:hover::after { opacity: 1; }
+    .service-icon { width: 52px; height: 52px; border-radius: 14px; background: rgba(37,99,235,0.15); border: 1px solid rgba(37,99,235,0.25); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 1.25rem; }
+    .service-title { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 0.6rem; }
+    .service-desc { font-size: 14px; color: var(--white-muted); line-height: 1.7; margin-bottom: 1.25rem; }
+    .service-features { list-style: none; }
+    .service-features li { font-size: 13px; color: var(--white-dim); padding: 4px 0; display: flex; align-items: center; gap: 8px; }
+    .service-features li::before { content: ''; width: 5px; height: 5px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
+    .service-price { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 13px; color: var(--white-muted); }
+    .service-price strong { color: var(--blue-glow); font-size: 16px; font-family: var(--font-display); }
+
+    /* ── SKILLS ── */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+    .skill-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; transition: border-color 0.25s, background 0.25s, transform 0.25s; }
+    .skill-card:hover { background: var(--card-hover); border-color: rgba(37,99,235,0.4); transform: translateY(-4px); }
+    .skill-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+    .skill-info { display: flex; align-items: center; gap: 12px; }
+    .skill-icon-wrap { width: 44px; height: 44px; border-radius: 10px; background: rgba(37,99,235,0.15); border: 1px solid rgba(37,99,235,0.25); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .skill-name { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--white); }
+    .skill-category { font-size: 12px; color: var(--white-muted); margin-top: 2px; }
+    .skill-percent { font-family: var(--font-display); font-size: 22px; font-weight: 800; color: var(--blue-glow); }
+    .skill-bar-bg { height: 4px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; }
+    .skill-bar { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--blue), var(--accent)); transition: width 1.2s cubic-bezier(0.4,0,0.2,1); width: 0%; }
+
+    /* Tools section */
+    .tools-row { margin-top: 3rem; }
+    .tools-title { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 1rem; }
+    .tools-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tool-badge { display: flex; align-items: center; gap: 8px; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 14px; font-size: 13px; color: var(--white-dim); transition: all 0.2s; }
+    .tool-badge:hover { background: var(--card-hover); border-color: var(--border-hover); color: var(--white); }
+    .tool-badge span { font-size: 16px; }
+
+    /* ── PROCESS ── */
+    #process { background: rgba(255,255,255,0.015); }
+    .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; position: relative; }
+    .process-steps::before { content: ''; position: absolute; top: 32px; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, var(--blue), var(--accent), transparent); z-index: 0; }
+    .process-step { text-align: center; padding: 0 1rem; position: relative; z-index: 1; }
+    .process-step-num { width: 64px; height: 64px; border-radius: 50%; background: var(--navy-light); border: 2px solid var(--blue); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 22px; font-weight: 800; color: var(--blue-glow); margin: 0 auto 1.25rem; position: relative; }
+    .process-step-num::after { content: ''; position: absolute; inset: -6px; border-radius: 50%; border: 1px solid rgba(37,99,235,0.2); }
+    .process-step-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+    .process-step-text { font-size: 13px; color: var(--white-muted); line-height: 1.6; }
+
+    /* ── PROJECTS ── */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+    .project-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.25s, background 0.25s, transform 0.25s; position: relative; }
+    .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue), var(--accent)); opacity: 0; transition: opacity 0.3s; }
+    .project-card:hover { background: var(--card-hover); border-color: rgba(37,99,235,0.4); transform: translateY(-5px); }
+    .project-card:hover::before { opacity: 1; }
+    .project-img { width: 100%; height: 180px; object-fit: cover; background: linear-gradient(135deg, #1e3a8a 0%, #0e7490 100%); display: flex; align-items: center; justify-content: center; font-size: 48px; }
+    .project-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .project-tag-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+    .project-tag { display: inline-block; background: rgba(6,182,212,0.12); border: 1px solid rgba(6,182,212,0.25); color: var(--accent-light); font-size: 11px; font-weight: 500; padding: 4px 12px; border-radius: 100px; letter-spacing: 0.5px; }
+    .project-status { font-size: 11px; color: var(--green-light); background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); padding: 3px 10px; border-radius: 100px; }
+    .project-title { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; letter-spacing: -0.3px; }
+    .project-desc { font-size: 14px; color: var(--white-muted); line-height: 1.7; flex: 1; margin-bottom: 1rem; }
+    .project-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+    .stack-pill { font-size: 11px; color: var(--white-dim); background: rgba(255,255,255,0.06); border: 1px solid var(--border); padding: 3px 10px; border-radius: 100px; }
+    .project-links { display: flex; gap: 10px; }
+    .project-link { flex: 1; text-align: center; padding: 8px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; text-decoration: none; transition: all 0.2s; border: 1px solid var(--border-hover); color: var(--white-dim); }
+    .project-link:hover { background: var(--card-hover); color: var(--white); }
+    .project-link.primary { background: var(--blue); border-color: transparent; color: #fff; }
+    .project-link.primary:hover { background: var(--blue-light); }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: rgba(255,255,255,0.015); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .testimonial-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.75rem; transition: border-color 0.25s, transform 0.25s; position: relative; }
+    .testimonial-card:hover { border-color: rgba(37,99,235,0.35); transform: translateY(-3px); }
+    .testimonial-quote { font-size: 48px; line-height: 1; color: var(--blue); font-family: Georgia, serif; position: absolute; top: 1rem; right: 1.5rem; opacity: 0.4; }
+    .testimonial-text { font-size: 15px; color: var(--white-dim); line-height: 1.8; margin-bottom: 1.5rem; font-style: italic; }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .testimonial-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 16px; font-weight: 700; color: #fff; flex-shrink: 0; }
+    .testimonial-name { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--white); }
+    .testimonial-role { font-size: 12px; color: var(--white-muted); margin-top: 2px; }
+    .testimonial-stars { display: flex; gap: 2px; margin-bottom: 1rem; }
+    .testimonial-stars span { color: #fbbf24; font-size: 14px; }
+
+    /* ── EXPERIENCE / TIMELINE ── */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(180deg, var(--blue), var(--accent), transparent); border-radius: 2px; }
+    .timeline-item { position: relative; padding-bottom: 2.5rem; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-dot { position: absolute; left: -2.5rem; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--blue); border: 2px solid var(--navy); box-shadow: 0 0 0 3px rgba(37,99,235,0.3); }
+    .timeline-date { font-size: 12px; color: var(--accent); font-weight: 500; letter-spacing: 0.5px; margin-bottom: 4px; text-transform: uppercase; }
+    .timeline-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 2px; }
+    .timeline-org { font-size: 14px; color: var(--blue-glow); margin-bottom: 8px; }
+    .timeline-desc { font-size: 14px; color: var(--white-muted); line-height: 1.7; }
+
+    /* ── CONTACT ── */
+    .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-intro p { font-size: 16px; color: var(--white-dim); line-height: 1.8; margin-bottom: 2rem; }
+    .contact-cards { display: flex; flex-direction: column; gap: 12px; }
+    .contact-card { display: flex; align-items: center; gap: 1rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.25s, background 0.25s, transform 0.2s; }
+    .contact-card:hover { background: var(--card-hover); border-color: rgba(37,99,235,0.4); transform: translateX(6px); }
+    .contact-icon { width: 42px; height: 42px; border-radius: 10px; background: rgba(37,99,235,0.15); border: 1px solid rgba(37,99,235,0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-icon svg { width: 18px; height: 18px; }
+    .contact-label { font-size: 11px; color: var(--white-muted); letter-spacing: 0.5px; text-transform: uppercase; }
+    .contact-value { font-size: 14px; font-weight: 500; color: var(--white); margin-top: 1px; }
+    .contact-arrow { margin-left: auto; color: var(--white-muted); font-size: 18px; transition: transform 0.2s; }
+    .contact-card:hover .contact-arrow { transform: translateX(4px); }
+
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 12px; font-weight: 500; color: var(--white-dim); letter-spacing: 0.5px; }
+    .form-group input, .form-group textarea, .form-group select { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; font-family: var(--font-body); font-size: 14px; color: var(--white); outline: none; transition: border-color 0.2s; resize: none; }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: var(--white-muted); }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--blue); background: var(--card-hover); }
+    .form-group textarea { min-height: 120px; }
+    .form-group select option { background: #1a2540; color: var(--white); }
+    .form-submit { width: 100%; justify-content: center; font-size: 15px; }
+
+    /* ── FAQ ── */
+    #faq { background: rgba(255,255,255,0.015); }
+    .faq-list { max-width: 720px; }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; overflow: hidden; }
+    .faq-question { width: 100%; background: var(--card-bg); border: none; padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--white); text-align: left; transition: background 0.2s; }
+    .faq-question:hover { background: var(--card-hover); }
+    .faq-icon { font-size: 20px; color: var(--blue-glow); transition: transform 0.3s; flex-shrink: 0; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-answer-inner { padding: 0 1.5rem 1.25rem; font-size: 14px; color: var(--white-muted); line-height: 1.8; }
+
+    /* ── FOOTER ── */
+    .divider { height: 1px; background: var(--border); margin: 0; }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    footer { border-top: 1px solid var(--border); padding: 3rem 0 2rem; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-brand p { font-size: 14px; color: var(--white-muted); line-height: 1.7; margin-top: 0.75rem; max-width: 280px; }
+    .footer-logo { font-family: var(--font-display); font-size: 24px; font-weight: 800; color: var(--white); }
+    .footer-logo span { color: var(--blue-glow); }
+    .footer-col-title { font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 1rem; letter-spacing: 0.5px; text-transform: uppercase; }
+    .footer-links-col { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-links-col a { font-size: 14px; color: var(--white-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links-col a:hover { color: var(--white); }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a { width: 36px; height: 36px; border-radius: 8px; background: var(--card-bg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--white-muted); font-size: 16px; text-decoration: none; transition: all 0.2s; }
+    .footer-social a:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    .footer-copy { font-size: 13px; color: var(--white-muted); }
+    .footer-made { font-size: 13px; color: var(--white-muted); }
+    .footer-made span { color: #ef4444; }
+
+    /* ── SCROLL TO TOP ── */
+    #scrollTop { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; background: var(--blue); border: none; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #fff; font-size: 18px; z-index: 99; opacity: 0; transform: translateY(10px); transition: all 0.3s; box-shadow: 0 4px 20px rgba(37,99,235,0.4); }
+    #scrollTop.visible { opacity: 1; transform: translateY(0); }
+    #scrollTop:hover { background: var(--blue-light); transform: translateY(-2px); }
+
+    /* ── SECTION-LEVEL CTA STRIPS ── */
+    .section-cta { margin-top: 3rem; text-align: center; }
+    .section-cta p { font-size: 15px; color: var(--white-muted); margin-bottom: 1rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner { flex-direction: column-reverse; gap: 3rem; text-align: center; }
+      .hero-actions { justify-content: center; }
+      .hero-tagline { text-align: left; }
+      .hero-location, .hero-availability { justify-content: center; }
+      .stats-row { grid-template-columns: 1fr 1fr 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-cards { grid-template-columns: 1fr 1fr; }
+      .contact-wrapper { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero-avatar { width: 220px; height: 220px; font-size: 56px; }
+      .hero-avatar-img { width: 220px; height: 220px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .process-steps::before { display: none; }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 0 1.25rem; }
+      section { padding: 4rem 0; }
+      .stats-row { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .about-cards { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .hero-name { letter-spacing: -1px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">&times;</button>
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#skills" onclick="closeMobile()">Skills</a>
+    <a href="#projects" onclick="closeMobile()">Projects</a>
+    <a href="#testimonials" onclick="closeMobile()">Testimonials</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+  </div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">AW<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeBtn" title="Toggle theme">🌙</button>
+        <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-badge">Available for freelance work</div>
+          <h1 class="hero-name">Asingwire<br><span class="highlight">Wilber</span></h1>
+          <p class="hero-title"><strong>Software Developer</strong> &amp; <strong>Graphic Designer</strong></p>
+          <p class="hero-location">📍 Kampala, Uganda &nbsp;·&nbsp; 🕐 EAT (UTC+3)</p>
+          <p class="hero-availability">💼 Status: <span>Open to remote &amp; local projects</span></p>
+          <p class="hero-tagline">Your Technology. Your Future Simplified.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.45 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.06 6.06l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Let's work together
+            </a>
+            <a href="#projects" class="btn btn-ghost">View my work &rarr;</a>
+            <a href="cv-asingwire-wilber.pdf" download class="btn btn-cv">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download CV
+            </a>
+          </div>
+          <div class="stats-row">
+            <div class="stat"><div class="stat-num">2+</div><div class="stat-label">Years experience</div></div>
+            <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Projects done</div></div>
+            <div class="stat"><div class="stat-num">6</div><div class="stat-label">Core skills</div></div>
+          </div>
+        </div>
+        <div class="hero-avatar-wrap">
+          <img src="profile.jpeg" alt="Asingwire Wilber — Software Developer & Graphic Designer based in Uganda" class="hero-avatar-img"
+               onerror="this.style.display='none';document.getElementById('avatarFallback').style.display='flex';">
+          <div id="avatarFallback" class="hero-avatar" style="display:none;">AW</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Who I am</div>
+        <h2 class="section-title">Passionate about building<br>digital experiences</h2>
+      </div>
+      <div class="about-grid reveal">
+        <div class="about-text">
+          <p>I am <strong>Asingwire Wilber</strong>, a Software Developer and Graphic Designer based in <strong>Kampala, Uganda</strong>. With over 2 years of hands-on experience, I combine technical expertise with creative design thinking to deliver solutions that are both functional and visually compelling.</p>
+          <p>My journey started with a deep curiosity about how things on screens work — that curiosity grew into a passion for <strong>building them</strong>. I love the moment a client sees their idea turn into a real, working product.</p>
+          <p>I believe technology should <strong>simplify lives</strong>, not complicate them. Whether writing clean, efficient code or crafting visuals that communicate with clarity, every decision I make is guided by the user's experience and the client's goals.</p>
+          <p>When I'm not coding or designing, I enjoy exploring new tech trends, contributing to open-source projects, and mentoring aspiring developers in my community.</p>
+        </div>
+        <div class="about-cards">
+          <div class="about-card"><div class="about-card-icon">💻</div><div class="about-card-title">Development</div><div class="about-card-text">Clean, efficient code that scales and performs across all devices.</div></div>
+          <div class="about-card"><div class="about-card-icon">🎨</div><div class="about-card-title">Design</div><div class="about-card-text">Visual storytelling that resonates and converts audiences.</div></div>
+          <div class="about-card"><div class="about-card-icon">📱</div><div class="about-card-title">Responsive</div><div class="about-card-text">Seamless experience across every screen and device.</div></div>
+          <div class="about-card"><div class="about-card-icon">🚀</div><div class="about-card-title">Delivery</div><div class="about-card-text">On time, on brief, and above expectations — always.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">What I offer</div>
+        <h2 class="section-title">Services</h2>
+        <p class="section-sub">From concept to launch — I offer end-to-end digital services tailored to your goals and budget.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">🌐</div>
+          <div class="service-title">Web Development</div>
+          <div class="service-desc">Custom, responsive websites and web applications built with modern technologies that are fast, accessible, and easy to maintain.</div>
+          <ul class="service-features">
+            <li>Responsive HTML/CSS/JavaScript sites</li>
+            <li>React single-page applications</li>
+            <li>Landing pages &amp; portfolios</li>
+            <li>E-commerce integrations</li>
+            <li>Website maintenance &amp; updates</li>
+          </ul>
+          <div class="service-price">Starting from <strong>UGX 500,000</strong> / $130</div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">🎨</div>
+          <div class="service-title">Graphic Design</div>
+          <div class="service-desc">Distinctive visual identities and marketing materials that help your brand stand out and communicate with impact.</div>
+          <ul class="service-features">
+            <li>Logo &amp; brand identity design</li>
+            <li>Social media graphics &amp; templates</li>
+            <li>Flyers, banners &amp; posters</li>
+            <li>Business cards &amp; stationery</li>
+            <li>Pitch deck design</li>
+          </ul>
+          <div class="service-price">Starting from <strong>UGX 150,000</strong> / $40</div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">📐</div>
+          <div class="service-title">UI/UX Design</div>
+          <div class="service-desc">User-centred design that transforms complex ideas into intuitive digital experiences users love to interact with.</div>
+          <ul class="service-features">
+            <li>Wireframing &amp; prototyping</li>
+            <li>User flow &amp; journey mapping</li>
+            <li>Figma design systems</li>
+            <li>Usability reviews</li>
+            <li>Mobile app interface design</li>
+          </ul>
+          <div class="service-price">Starting from <strong>UGX 300,000</strong> / $80</div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">🐍</div>
+          <div class="service-title">Python Automation</div>
+          <div class="service-desc">Custom Python scripts and tools that automate repetitive tasks, saving your business hours of manual effort every week.</div>
+          <ul class="service-features">
+            <li>Data scraping &amp; processing</li>
+            <li>Report automation</li>
+            <li>File &amp; workflow automation</li>
+            <li>API integrations</li>
+            <li>Bot development</li>
+          </ul>
+          <div class="service-price">Starting from <strong>UGX 200,000</strong> / $55</div>
+        </div>
+      </div>
+      <div class="section-cta reveal">
+        <p>Not sure which service fits your project? Let's have a quick conversation.</p>
+        <a href="#contact" class="btn btn-primary">Get a free quote &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- HOW I WORK -->
+  <section id="process">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">My process</div>
+        <h2 class="section-title">How I work</h2>
+        <p class="section-sub">A clear, collaborative process that keeps you informed and in control from day one to launch.</p>
+      </div>
+      <div class="process-steps reveal">
+        <div class="process-step">
+          <div class="process-step-num">01</div>
+          <div class="process-step-title">Discovery</div>
+          <div class="process-step-text">We start with a free consultation to understand your goals, audience, and timeline. No jargon — just a real conversation.</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">02</div>
+          <div class="process-step-title">Planning</div>
+          <div class="process-step-text">I map out the project scope, wireframes, or technical architecture and send you a clear proposal with pricing.</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">03</div>
+          <div class="process-step-title">Build</div>
+          <div class="process-step-text">I build your project iteratively, sharing progress updates so you're never left in the dark. Feedback is always welcome.</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">04</div>
+          <div class="process-step-title">Review</div>
+          <div class="process-step-text">You review the final work. We refine until it's exactly right. Up to 2 rounds of revisions are included.</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">05</div>
+          <div class="process-step-title">Launch</div>
+          <div class="process-step-text">We go live! I handle deployment and provide a handover guide. Post-launch support is available for 30 days.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SKILLS -->
+  <section id="skills" style="background: rgba(255,255,255,0.015);">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">What I do</div>
+        <h2 class="section-title">Skills &amp; expertise</h2>
+        <p class="section-sub">A blend of development and design skills that lets me take a project from concept to completion.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-header"><div class="skill-info"><div class="skill-icon-wrap">🖥️</div><div><div class="skill-name">HTML &amp; CSS</div><div class="skill-category">Frontend Foundation</div></div></div><div class="skill-percent">90%</div></div>
+          <div class="skill-bar-bg"><div class="skill-bar" data-width="90"></div></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-header"><div class="skill-info"><div class="skill-icon-wrap">⚡</div><div><div class="skill-name">JavaScript</div><div class="skill-category">Web Interactivity</div></div></div><div class="skill-percent">80%</div></div>
+          <div class="skill-bar-bg"><div class="skill-bar" data-width="80"></div></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-header"><div class="skill-info"><div class="skill-icon-wrap">⚛️</div><div><div class="skill-name">React</div><div class="skill-category">UI Framework</div></div></div><div class="skill-percent">75%</div></div>
+          <div class="skill-bar-bg"><div class="skill-bar" data-width="75"></div></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-header"><div class="skill-info"><div class="skill-icon-wrap">🐍</div><div><div class="skill-name">Python</div><div class="skill-category">Backend &amp; Automation</div></div></div><div class="skill-percent">70%</div></div>
+          <div class="skill-bar-bg"><div class="skill-bar" data-width="70"></div></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-header"><div class="skill-info"><div class="skill-icon-wrap">🎨</div><div><div class="skill-name">Graphic Design</div><div class="skill-category">Visual Communication</div></div></div><div class="skill-percent">85%</div></div>
+          <div class="skill-bar-bg"><div class="skill-bar" data-width="85"></div></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-header"><div class="skill-info"><div class="skill-icon-wrap">📐</div><div><div class="skill-name">UI/UX Design</div><div class="skill-category">User Experience</div></div></div><div class="skill-percent">80%</div></div>
+          <div class="skill-bar-bg"><div class="skill-bar" data-width="80"></div></div>
+        </div>
+      </div>
+
+      <!-- Tools & Technologies -->
+      <div class="tools-row reveal">
+        <div class="tools-title">Tools &amp; Technologies</div>
+        <div class="tools-grid">
+          <div class="tool-badge"><span>🎨</span> Figma</div>
+          <div class="tool-badge"><span>🖊️</span> Adobe Illustrator</div>
+          <div class="tool-badge"><span>📸</span> Adobe Photoshop</div>
+          <div class="tool-badge"><span>⚙️</span> Git &amp; GitHub</div>
+          <div class="tool-badge"><span>💻</span> VS Code</div>
+          <div class="tool-badge"><span>🗄️</span> MySQL</div>
+          <div class="tool-badge"><span>🟢</span> Node.js</div>
+          <div class="tool-badge"><span>🐳</span> Docker</div>
+          <div class="tool-badge"><span>☁️</span> Netlify / Vercel</div>
+          <div class="tool-badge"><span>📱</span> Canva</div>
+          <div class="tool-badge"><span>🔗</span> REST APIs</div>
+          <div class="tool-badge"><span>📋</span> Trello / Notion</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">My journey</div>
+        <h2 class="section-title">Experience &amp; education</h2>
+        <p class="section-sub">The path that shaped my skills and how I approach every project.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;" class="reveal">
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--blue-glow); margin-bottom: 2rem;">Work Experience</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2024 – Present</div>
+              <div class="timeline-title">Freelance Software Developer &amp; Designer</div>
+              <div class="timeline-org">Self-employed · Remote</div>
+              <div class="timeline-desc">Building websites, web apps, and brand identities for clients across Uganda and internationally. Delivered 20+ projects across web development, UI/UX, and graphic design.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2023 – 2024</div>
+              <div class="timeline-title">Junior Web Developer</div>
+              <div class="timeline-org">Tech Startup · Kampala, Uganda</div>
+              <div class="timeline-desc">Developed and maintained client websites using HTML, CSS, and JavaScript. Collaborated with designers to implement pixel-perfect UIs and improved page load speeds by 40%.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2022 – 2023</div>
+              <div class="timeline-title">Graphic Design Intern</div>
+              <div class="timeline-org">Creative Agency · Kampala, Uganda</div>
+              <div class="timeline-desc">Created brand materials, social media content, and marketing collateral for local SMEs. Handled 15+ brand identity projects from brief to final delivery.</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--blue-glow); margin-bottom: 2rem;">Education &amp; Certifications</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot" style="background: var(--accent);"></div>
+              <div class="timeline-date">2021 – 2024</div>
+              <div class="timeline-title">Bachelor of Science in Computer Science</div>
+              <div class="timeline-org">Makerere University · Kampala</div>
+              <div class="timeline-desc">Studied algorithms, data structures, software engineering principles, and database systems. Final year project: a community service management system.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot" style="background: var(--accent);"></div>
+              <div class="timeline-date">2023</div>
+              <div class="timeline-title">Responsive Web Design</div>
+              <div class="timeline-org">freeCodeCamp · Online</div>
+              <div class="timeline-desc">300-hour certification covering HTML5, CSS3, Flexbox, Grid, and accessibility best practices.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot" style="background: var(--accent);"></div>
+              <div class="timeline-date">2022</div>
+              <div class="timeline-title">Google UX Design Certificate</div>
+              <div class="timeline-org">Google · Coursera</div>
+              <div class="timeline-desc">Completed the 6-course professional certificate covering the full UX design process from empathy to high-fidelity prototypes.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">My work</div>
+        <h2 class="section-title">Featured projects</h2>
+        <p class="section-sub">A selection of projects that reflect my skills, creativity, and attention to detail.</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <div class="project-img" style="font-size:56px;">🌐</div>
+          <div class="project-body">
+            <div class="project-tag-row">
+              <span class="project-tag">Web Development</span>
+              <span class="project-status">Live</span>
+            </div>
+            <div class="project-title">Personal Portfolio Website</div>
+            <p class="project-desc">A fully responsive personal portfolio website built to showcase my work, skills, and experience. Features smooth scroll animations, a working contact form via Formspree, and WhatsApp integration. Achieves 95+ Lighthouse performance score.</p>
+            <div class="project-stack"><span class="stack-pill">HTML5</span><span class="stack-pill">CSS3</span><span class="stack-pill">JavaScript</span><span class="stack-pill">Formspree</span></div>
+            <div class="project-links">
+              <a href="#" class="project-link primary">View Live</a>
+              <a href="https://github.com/wasingwire1" class="project-link" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-img" style="font-size:56px;">📱</div>
+          <div class="project-body">
+            <div class="project-tag-row">
+              <span class="project-tag">UI/UX Design</span>
+              <span class="project-status">Completed</span>
+            </div>
+            <div class="project-title">Delivery App UI Design</div>
+            <p class="project-desc">Designed a clean and intuitive mobile food delivery application interface for a local Kampala restaurant. Created 24 screens covering onboarding, ordering, tracking, and payment flows. Reduced checkout steps from 6 to 3.</p>
+            <div class="project-stack"><span class="stack-pill">Figma</span><span class="stack-pill">Prototyping</span><span class="stack-pill">User Research</span><span class="stack-pill">Design System</span></div>
+            <div class="project-links">
+              <a href="#" class="project-link primary">View Design</a>
+              <a href="#contact" class="project-link">Case Study</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-img" style="font-size:56px;">🤖</div>
+          <div class="project-body">
+            <div class="project-tag-row">
+              <span class="project-tag">Python</span>
+              <span class="project-status">Live</span>
+            </div>
+            <div class="project-title">Business Report Automation Tool</div>
+            <p class="project-desc">A Python automation script for a local SME that processes Excel data and generates formatted PDF reports automatically, saving 12+ hours of manual work per week. Integrated with WhatsApp Business API for automated sending.</p>
+            <div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">Pandas</span><span class="stack-pill">ReportLab</span><span class="stack-pill">WhatsApp API</span></div>
+            <div class="project-links">
+              <a href="https://github.com/wasingwire1" class="project-link primary" target="_blank">View Code</a>
+              <a href="#contact" class="project-link">Request Demo</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-img" style="font-size:56px;">🏪</div>
+          <div class="project-body">
+            <div class="project-tag-row">
+              <span class="project-tag">Brand Design</span>
+              <span class="project-status">Completed</span>
+            </div>
+            <div class="project-title">SME Brand Identity Package</div>
+            <p class="project-desc">Complete brand identity design for a Kampala-based retail business — including logo design, colour palette, typography guide, business cards, letterheads, and social media templates. The brand increased customer recognition by 60%.</p>
+            <div class="project-stack"><span class="stack-pill">Illustrator</span><span class="stack-pill">Photoshop</span><span class="stack-pill">Brand Strategy</span></div>
+            <div class="project-links">
+              <a href="#" class="project-link primary">View Brand</a>
+              <a href="#contact" class="project-link">Similar Project?</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-img" style="font-size:56px;">📊</div>
+          <div class="project-body">
+            <div class="project-tag-row">
+              <span class="project-tag">Web App</span>
+              <span class="project-status">In Progress</span>
+            </div>
+            <div class="project-title">Community Resource Portal</div>
+            <p class="project-desc">A web application connecting community members to local services and resources in Uganda. Features user authentication, resource listings, and a map integration. Built with React and a Python backend.</p>
+            <div class="project-stack"><span class="stack-pill">React</span><span class="stack-pill">Python</span><span class="stack-pill">MySQL</span><span class="stack-pill">Google Maps API</span></div>
+            <div class="project-links">
+              <a href="https://github.com/wasingwire1" class="project-link primary" target="_blank">GitHub</a>
+              <a href="#contact" class="project-link">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-img" style="font-size:56px;">📈</div>
+          <div class="project-body">
+            <div class="project-tag-row">
+              <span class="project-tag">Dashboard</span>
+              <span class="project-status">Completed</span>
+            </div>
+            <div class="project-title">Analytics Dashboard UI</div>
+            <p class="project-desc">A data analytics dashboard designed for a logistics company to track deliveries, driver performance, and revenue in real time. Clean, information-dense layout with dark mode support.</p>
+            <div class="project-stack"><span class="stack-pill">Figma</span><span class="stack-pill">React</span><span class="stack-pill">Chart.js</span><span class="stack-pill">Tailwind</span></div>
+            <div class="project-links">
+              <a href="#" class="project-link primary">View Design</a>
+              <a href="https://github.com/wasingwire1" class="project-link" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-cta reveal">
+        <p>Interested in working together on something like this?</p>
+        <a href="#contact" class="btn btn-primary">Start a project &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">What clients say</div>
+        <h2 class="section-title">Testimonials</h2>
+        <p class="section-sub">Real feedback from people I've had the privilege of working with.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testimonial-text">Wilber built our business website from scratch in under 2 weeks. He understood exactly what we needed without us having to explain everything twice. The result was beyond what we expected — clean, fast, and our customers love it.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">NK</div>
+            <div>
+              <div class="testimonial-name">Nakato Kirabo</div>
+              <div class="testimonial-role">Owner, Kirabo Boutique · Kampala</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testimonial-text">The automation script Wilber built for us saves our team at least 3 hours every single day. He explained what he was doing at every step and delivered ahead of schedule. Highly professional and very communicative throughout.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #0e7490, #1e3a8a);">BM</div>
+            <div>
+              <div class="testimonial-name">Brian Mugisha</div>
+              <div class="testimonial-role">Operations Manager, LogiTrack Uganda</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testimonial-text">Wilber redesigned our entire brand identity — logo, colours, social media templates, everything. He brought ideas we hadn't even considered and the final brand looked completely professional. Our followers doubled in two months.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #7c3aed, #0e7490);">SA</div>
+            <div>
+              <div class="testimonial-name">Sandra Atim</div>
+              <div class="testimonial-role">Founder, Glow Beauty Uganda</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Common questions</div>
+        <h2 class="section-title">FAQ</h2>
+        <p class="section-sub">Answers to the questions I get asked most often before starting a project.</p>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How long does a typical project take?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">It depends on the project. A simple landing page takes 3–5 days. A full website with multiple pages and a contact form takes 1–2 weeks. A brand identity package takes 5–7 days. A web application with custom features can take 3–6 weeks. I'll always give you a clear timeline in the proposal before we start.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How do payments work?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">I typically work on a 50% upfront / 50% on completion basis for most projects. For larger projects, we can agree on milestone-based payments. I accept Mobile Money (MTN/Airtel), bank transfer, and international payments via PayPal or Wise.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Do you work with clients outside Uganda?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Absolutely — I work with clients across Africa and internationally. All communication happens via WhatsApp, email, or video call. I'm in the EAT timezone (UTC+3) so I'm well-positioned to work with clients in Europe, the Middle East, and Africa. International payments are handled via PayPal or Wise.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How many revisions are included?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">All projects include 2 rounds of revisions in the quoted price. This means you can request adjustments twice after the initial delivery. Additional revision rounds beyond that are billed at an hourly rate. I've found that clear upfront communication usually means revisions are minimal.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Will I own the final files and code?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes — once the project is fully paid, you receive full ownership of all source files, code, and design assets. For design projects, you get all editable files (AI, PSD, Figma). For development projects, you get all source code files and access to any repositories. You can take the work anywhere.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Do you offer ongoing support after launch?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes! Every project includes 30 days of free post-launch support for bug fixes and minor tweaks. After that, I offer affordable monthly maintenance packages for website updates, security, and content changes. Just reach out and we'll find a plan that works for you.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <section id="contact" style="background: rgba(255,255,255,0.015);">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Get in touch</div>
+        <h2 class="section-title">Let's work together</h2>
+      </div>
+      <div class="contact-wrapper">
+        <div class="reveal">
+          <div class="contact-intro">
+            <p>Have a project in mind or just want to say hello? I'd love to hear from you. I typically respond within 24 hours. Reach out through any of the channels below.</p>
+          </div>
+          <div class="contact-cards">
+            <a href="mailto:asingwirewilber1@gmail.com" class="contact-card">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg></div>
+              <div><div class="contact-label">Email</div><div class="contact-value">asingwirewilber1@gmail.com</div></div>
+              <div class="contact-arrow">&#8594;</div>
+            </a>
+            <a href="https://wa.me/256789138854" target="_blank" class="contact-card">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="#60a5fa"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></div>
+              <div><div class="contact-label">WhatsApp</div><div class="contact-value">+256 789 138 854</div></div>
+              <div class="contact-arrow">&#8594;</div>
+            </a>
+            <a href="https://www.linkedin.com/in/wilber-asingwire" target="_blank" class="contact-card">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="#60a5fa"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+              <div><div class="contact-label">LinkedIn</div><div class="contact-value">linkedin.com/in/wilber-asingwire</div></div>
+              <div class="contact-arrow">&#8594;</div>
+            </a>
+            <a href="https://github.com/wasingwire1" target="_blank" class="contact-card">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="#60a5fa"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></div>
+              <div><div class="contact-label">GitHub</div><div class="contact-value">github.com/wasingwire1</div></div>
+              <div class="contact-arrow">&#8594;</div>
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xykbdeey" method="POST">
+            <input type="hidden" name="_replyto" value="asingwirewilber1@gmail.com" />
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First name</label>
+                <input type="text" id="fname" name="first_name" placeholder="Your first name" required />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last name</label>
+                <input type="text" id="lname" name="last_name" placeholder="Your last name" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="service">Service interested in</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+                <option value="Python Automation">Python Automation</option>
+                <option value="Other">Other / Not sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="budget">Approximate budget</label>
+              <select id="budget" name="budget">
+                <option value="">Select a budget range...</option>
+                <option value="Under $50">Under $50 (Under UGX 180k)</option>
+                <option value="$50–$150">$50–$150 (UGX 180k–550k)</option>
+                <option value="$150–$500">$150–$500 (UGX 550k–1.8M)</option>
+                <option value="$500+">$500+ (UGX 1.8M+)</option>
+                <option value="Let's discuss">Let's discuss</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Project inquiry..." required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell me about your project, timeline, and any specific requirements..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit" id="emailBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+              Send Message
+            </button>
+            <button type="button" class="btn btn-whatsapp" onclick="sendToWhatsApp()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+              Send via WhatsApp Instead
+            </button>
+            <p id="form-success" style="display:none;color:#67e8f9;font-size:13px;text-align:center;margin-top:6px;">&#10003; Message sent! I'll get back to you within 24 hours.</p>
+            <p id="form-error" style="display:none;color:#f87171;font-size:13px;text-align:center;margin-top:6px;">Something went wrong. Please use WhatsApp or email me directly.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">AW<span>.</span></div>
+          <p>Software Developer &amp; Graphic Designer based in Kampala, Uganda. Building digital experiences that simplify lives and create opportunities.</p>
+          <div class="footer-social" style="margin-top:1rem;">
+            <a href="https://github.com/wasingwire1" target="_blank" title="GitHub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/wilber-asingwire" target="_blank" title="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://wa.me/256789138854" target="_blank" title="WhatsApp">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            </a>
+            <a href="mailto:asingwirewilber1@gmail.com" title="Email">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Navigate</div>
+          <ul class="footer-links-col">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-links-col">
+            <li><a href="#services">Web Development</a></li>
+            <li><a href="#services">Graphic Design</a></li>
+            <li><a href="#services">UI/UX Design</a></li>
+            <li><a href="#services">Python Automation</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links-col">
+            <li><a href="mailto:asingwirewilber1@gmail.com">Email me</a></li>
+            <li><a href="https://wa.me/256789138854" target="_blank">WhatsApp</a></li>
+            <li><a href="https://www.linkedin.com/in/wilber-asingwire" target="_blank">LinkedIn</a></li>
+            <li><a href="cv-asingwire-wilber.pdf" download>Download CV</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2026 Asingwire Wilber. All rights reserved.</div>
+        <div class="footer-made">Made with <span>♥</span> in Kampala, Uganda</div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Scroll to top button -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">&#8679;</button>
+
+<script>
+  // ── Nav scroll ──
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // ── Mobile menu ──
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.add('open');
+  });
+  document.getElementById('mobileClose').addEventListener('click', closeMobile);
+  function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  // ── Dark/Light mode toggle ──
+  const themeBtn = document.getElementById('themeBtn');
+  let dark = true;
+  themeBtn.addEventListener('click', () => {
+    dark = !dark;
+    document.body.classList.toggle('light', !dark);
+    themeBtn.textContent = dark ? '🌙' : '☀️';
+  });
+
+  // ── Scroll reveal + skill bar animation ──
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        entry.target.querySelectorAll('.skill-bar[data-width]').forEach(bar => {
+          setTimeout(() => { bar.style.width = bar.dataset.width + '%'; }, 200);
+        });
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // ── FAQ accordion ──
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-answer').style.maxHeight = '0';
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  }
+
+  // ── Email via Formspree ──
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('emailBtn');
+    const success = document.getElementById('form-success');
+    const error = document.getElementById('form-error');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    success.style.display = 'none';
+    error.style.display = 'none';
+    try {
+      const res = await fetch(this.action, {
+        method: 'POST', body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        success.style.display = 'block';
+        this.reset();
+        setTimeout(() => { success.style.display = 'none'; }, 6000);
+      } else { throw new Error('failed'); }
+    } catch {
+      error.style.display = 'block';
+      setTimeout(() => { error.style.display = 'none'; }, 6000);
+    }
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg> Send Message';
+    btn.disabled = false;
+  });
+
+  // ── WhatsApp ──
+  function sendToWhatsApp() {
+    var fname = document.getElementById('fname').value.trim();
+    var lname = document.getElementById('lname').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var service = document.getElementById('service').value;
+    var budget = document.getElementById('budget').value;
+    var subject = document.getElementById('subject').value.trim();
+    var message = document.getElementById('message').value.trim();
+    if (!fname || !message) {
+      alert('Please fill in at least your name and message before sending via WhatsApp.');
+      return;
+    }
+    var text = 'Hello Wilber! 👋\n\n' +
+      'Name: ' + fname + ' ' + lname + '\n' +
+      'Email: ' + email + '\n' +
+      'Service: ' + (service || 'Not specified') + '\n' +
+      'Budget: ' + (budget || 'Not specified') + '\n' +
+      'Subject: ' + subject + '\n\n' +
+      'Message:\n' + message;
+    window.open('https://wa.me/256789138854?text=' + encodeURIComponent(text), '_blank');
+  }
+</script>
+</body>
+</html>
